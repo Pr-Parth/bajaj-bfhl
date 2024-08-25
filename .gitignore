@@ -1,21 +1,120 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const apiRoutes = require('./routes/apiRoutes');
+# Operating system files
+########################
+# macOS
+.DS_Store
 
-dotenv.config();
-const app = express();
-app.use(cors());
-app.use(express.json());
+# Windows
+Thumbs.db
+desktop.ini
 
-app.use('/bfhl', apiRoutes);
+# Linux
+*~
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(err.status || 500).json({ error: err.message || 'Internal server error' });
-});
+# Node.js
+##########
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+# Environment variables
+########################
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+########
+*.log
+logs/
+*.log.*
+
+# Dependency directories
+#########################
+node_modules/
+jspm_packages/
+public/assets/
+
+# Compiled source
+#################
+*.class
+*.com
+*.dll
+*.exe
+*.o
+*.so
+*.jar
+*.pyc
+*.pyo
+
+# Build directories
+###################
+build/
+dist/
+out/
+
+# IDE-specific files
+#####################
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Backup files
+##############
+*.bak
+*.swp
+*.tmp
+
+# Configuration files
+#####################
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# System Files
+##############
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+###############
+*.log
+*.pid
+*.seed
+*.pid.lock
+*.cover
+*.diff
+*.err
+*.orig
+*.rej
+*.swo
+*.swp
+*.sql
+*.data
+*.raw
+*.out
+
+# Package files
+###############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Database files
+################
+*.sqlite
+*.sqlite3
+*.db
